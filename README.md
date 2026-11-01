@@ -1,1 +1,1 @@
-# ism2411
+# ISM2411 - Coursework Repository\nThis repository contains lab assignments and Python scripts for ISM 2411.
