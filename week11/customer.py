@@ -72,19 +72,19 @@ for record in customers:
 
 print("---Exercise 7 ---")
 catalog = {
-    "Widget A": {'price': 9.99, "Stock": 150},
+    "Widget A": {'price': 9.99, "stock": 150},
     "Widget C": {'price': 49.99, 'stock': 8}
 
 }
 
 for name, details in catalog.items():
     if details ["stock"] < 20:
-        print(f"LOW STOCK: {name}- only {details['stock']} left")
+        print(f"LOW STOCK: {name} only {details['stock']} left")
 
 print("---Exercise 8 ---")
 
-trasactions = [
-    {"region": "South", "amount": 300}
+transactions = [
+    {"region": "South", "amount": 300},
     {"region": "North", "amount": 150},
     {"region": "South", "amount": 200},
 
@@ -96,6 +96,6 @@ for sale in transactions:
     amount = sale['amount']
     sales_by_region [region] = sales_by_region.get (region, 0) + amount
 
-    print(sales_by_region)
-    for region in sorted (sales_by_region):
-        print(f"{region}: {sales_by_region[region]}")
+print(sales_by_region)
+for region in sorted (sales_by_region):
+    print(f"{region}: {sales_by_region[region]}")
