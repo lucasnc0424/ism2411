@@ -37,7 +37,7 @@ with open(SALES_FILE, "r") as f:
         quantity = int(qty_str)
         total = price *quantity
         total_revenue += total
-        print(f"{product}: {quantity} units x ${price:.2f} = ${total:.2f}")
+        print(f"{product}: {quantity} units x ${price:.2f} =${total:.2f}")
 
 print("---Exercise 5---")
 
@@ -61,7 +61,7 @@ with open(CLEANED_FILE, "w", newline="") as f:
     for row in high_value:
         writer.writerow(row)
 
-print(f"Wrote {len{high_value}} of {rows_read} rows to {CLEANED_FILE}.")
+print(f"Wrote {len(high_value)} of {rows_read} rows to {CLEANED_FILE}.")
 
 print("---Exercise 6---")
 
@@ -69,17 +69,19 @@ dict_total = 0
 with open(SALES_FILE, "r") as f:
     reader = csv.DictReader(f)
     for row in reader:
-        price = float(row{"price"})
-        quantity = int(row{"quantity"})
+        price = float(row["price"])
+        quantity = int(row["quantity"])
         total = price * quantity
         dict_total += total
-        print(f"{row['product']}:{quantity} units x ${price:.2f} = ${total:.2f}")
+        print(f"{row['product']}:{quantity} units x ${price:.2f} =${total:.2f}")
 
 print("---Exercise 7---")
-
+summary = {}
 with open(SALES_FILE, "r") as f:
     reader = csv.DictReader(f)
     for row in reader:
             product = row ["product"]
-            total = float(row["price"])
-            
+            total = float(row["price"]) * int(row["quantity"])
+            summary[product] = summary.get(product , 0) +total
+
+#Used claude to bugfix
